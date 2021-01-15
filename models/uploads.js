@@ -10,17 +10,48 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      models.uploads.hasOne(models.images, {
+        as: "image",
+        foreignKey: "id",
+        sourceKey: "image_id",
+      });
+      models.uploads.hasOne(models.images, {
+        as: "thumbnail",
+        foreignKey: "id",
+        sourceKey: "thumbnail_id",
+      });
     }
   };
-  uploads.init({
-    id: DataTypes.BIGINT,
-    file_name: DataTypes.STRING,
-    image_id: DataTypes.UUID,
-    thumbnail_id: DataTypes.UUID
-  }, {
-    sequelize,
-    modelName: 'uploads',
-  });
+  uploads.init(
+    {
+      id: {
+        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true,
+      },
+      file_name: DataTypes.STRING,
+      image_id: {
+        type: DataTypes.UUID,
+        references: {
+          model: "images",
+          key: "id",
+        },
+      },
+      thumbnail_id: {
+        type: DataTypes.UUID,
+        references: {
+          model: "images",
+          key: "id",
+        },
+      },
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE,
+    },
+    {
+      sequelize,
+      modelName: "uploads",
+    }
+  );
   return uploads;
 };
