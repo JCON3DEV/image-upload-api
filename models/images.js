@@ -13,13 +13,24 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  images.init({
-    id: DataTypes.UUID,
-    bucket: DataTypes.STRING,
-    key: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'images',
-  });
+  images.init(
+    {
+      id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+      },
+      bucket: DataTypes.STRING,
+      key: DataTypes.STRING,
+      // Added below in addition to bootstrapped project from sequelize-cli
+      createdAt: DataTypes.DATE,
+      updatedAt: DataTypes.DATE,
+    },
+    {
+      sequelize,
+      modelName: "images",
+      // Added below in addition to bootstrapped project from sequelize-cli
+      timestamps:true
+    }
+  );
   return images;
 };
