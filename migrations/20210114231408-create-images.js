@@ -4,12 +4,9 @@ module.exports = {
     await queryInterface.createTable('images', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      id: {
         type: Sequelize.UUID
+        // auoincrement removed
       },
       bucket: {
         type: Sequelize.STRING
