@@ -51,6 +51,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "uploads",
+      timestamps: true,
     }
   );
   return uploads;
