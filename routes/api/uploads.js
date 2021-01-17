@@ -14,6 +14,37 @@ const s3 = new aws.S3({
 
 const S3_BUCKET = "jcon3dev-image-upload-storage";
 
+async function uploadToS3(key, buffer, mimetype) {
+  return new Promise((resolve, reject) => {
+    s3.putObject(
+      {
+        Bucket: S3_BUCKET,
+        ContentType: mimetype,
+        Key: key,
+        Body: buffer,
+      },
+      () => resolve()
+    );
+  });
+}
+
+function getSignedUrl(bucket, key, expires = 3600) {
+  return new Promise((resolve, reject) => {
+    s3.getSignedUrl(
+      "getObject",
+      {
+        Bucket: bucket,
+        Key: key,
+        Expires: expires,
+      },
+      function (err, url) {
+        if (err) throw new Error(err);
+
+        resolve(url);
+      }
+    );
+  });
+}
 
 router.get("/api/uploads", async (req, res) => {
   let uploadList = await models.uploads.findAll({
