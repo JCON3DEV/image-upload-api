@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "jennifer",
-    "database": "jcon3dev-image-upload-storage",
+    "database": "postgres",
     "host": "jcon3dev-image-upload-storage.c6ovailoy1am.us-east-2.rds.amazonaws.com",
     "dialect": "postgres"
   },
