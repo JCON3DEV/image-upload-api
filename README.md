@@ -40,6 +40,11 @@ react-dropzone-uploader - (React Dropzone Uploader is a customizable file dropzo
 react-image-gallery - (a React component for building image galleries and carousels)
 
 ## directions;
+clone or fork the repos
+cd into the directory.
+In order to run type: $ npm install
+
+## To start;
 ### In terminal from image-uploader-api type; $ npm run dev
 ; http://localhost:8000/api/health
 
