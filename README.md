@@ -47,7 +47,6 @@ In order to run type: $ npm install
 
 ## To start;
 ### In terminal from image-uploader-api type; $ npm run dev
-; http://localhost:8000/api/health
 
 
 ### in terminal from image-uploader-ui type: $ npm start
