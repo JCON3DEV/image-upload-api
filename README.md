@@ -31,11 +31,11 @@ path - (path module provides utilities for working with file and directory paths
 fs - (The Node.js file system module allows you to work with the file system on your computer. CRUD)
 
 ## image-uploader-ui dependancies
-Multer - (Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.)
-body-parser - (Node.js body parsing middleware. Parse incoming request bodies in a middleware before your handlers, available under the req.body property.) - Consider validation techniques to prevent string injection
-sharp - (The typical use case for this high speed Node.js module is to convert large images in common formats to smaller, web-friendly JPEG, PNG, WebP and AVIF images of varying dimensions.)
-UUID - (creates of RFC4122 UUIDs)
-cors - (providing an Express middleware that can be used to enable CORS with various options.)
+Multer - (Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.) <br>
+body-parser - (Node.js body parsing middleware. Parse incoming request bodies in a middleware before your handlers, available under the req.body property.) <br>
+sharp - (The typical use case for this high speed Node.js module is to convert large images in common formats to smaller, web-friendly JPEG, PNG, WebP and AVIF images of varying dimensions.) <br>
+UUID - (creates of RFC4122 UUIDs) <br>
+cors - (providing an Express middleware that can be used to enable CORS with various options.) <br>
 
 react-dropzone-uploader - (React Dropzone Uploader is a customizable file dropzone and uploader for React. To handle image input.)
 react-image-gallery - (a React component for building image galleries and carousels)
