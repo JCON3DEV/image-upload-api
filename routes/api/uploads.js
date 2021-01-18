@@ -14,6 +14,9 @@ const s3 = new aws.S3({
 
 const S3_BUCKET = "jcon3dev-image-upload-storage";
 
+// troubleshooting aws credentials issue
+console.log("Credentials: ", aws.config.credentials);
+
 async function uploadToS3(key, buffer, mimetype) {
   return new Promise((resolve, reject) => {
     s3.putObject(
