@@ -1,5 +1,6 @@
 # image-upload-api
 An api to handle requests from the UI and manage image storage in the psql database.
+Part of an app that allows drag and drop images or browsed files to be added to a database hosted by aws.
 
 The image upload app was built with Node.js Express, AWS and React uses.
 
